@@ -1,0 +1,139 @@
+/* Zera as margens e preenchimentos de TODOS os elementos da página */
+/* Isso evita espaçamentos indesejados que os navegadores colocam por padrão */
+* {
+  margin: 0;       
+  padding: 0;      
+  box-sizing: border-box; 
+}
+
+/* Estilo do cabeçalho/topo da página */
+header {
+background-color: #1ABC9C;  
+color: #FFF;                
+text-align: center;         
+padding: 20px 0;            
+display: flex;             
+flex-direction: column;    
+gap: 15px;                  
+}
+
+/* Estilo da barra de navegação */
+nav {
+background-color: #333;     
+position: sticky;          
+top: 0;                    
+}
+
+/* Estilo da lista não ordenada (itens do menu) */
+ul {
+  list-style-type: none;   
+  display: flex;            
+}
+
+/* Estilo dos links do menu */
+li a {
+  color: #FFF;           
+  margin: 0 10px;          
+  text-decoration: none;    
+  padding: 8px 5px;        
+  display: inline-block;   
+}
+
+/* Efeito quando o mouse passa sobre os links do menu */
+li a:hover {
+  background-color: #DDD;   
+  color: #333;              
+}
+
+/* Estilo da seção principal (que contém aside e main) */
+section {
+display: flex;             
+}
+
+/* Estilo da coluna lateral */
+aside {
+  background-color: #F1F1F1; 
+  padding: 30px 15px;       
+  display: flex;            
+  flex-direction: column;   
+  gap: 20px;                
+  width: 40%;              
+}
+
+/* Estilo dos blocos "Sobre ele" e "Campeonatos" */
+div.about, div.more {
+  display: flex;
+  flex-direction: column;   
+  gap: 20px;               
+}
+
+/* Estilo da coluna principal */
+main {
+padding: 30px 15px;       
+display: flex;
+flex-direction: column;    
+gap: 20px;              
+width: 60%;                
+}
+
+/* Classe para imagens grandes */
+div.big {
+padding: 20px 20px;        
+}
+
+/* Estilo do rodapé */
+footer {
+background-color: #DDD;   
+text-align: center;    
+padding: 20px 0;      
+}
+
+/* Estilo padrão para todas as imagens */
+img{
+  width: 100%;            
+}
+
+/* Container das imagens com legendas */
+figure{
+  width: 100%;          
+}
+
+/* Container das imagens */
+.picture{
+  width: 100%;     
+}
+
+/* REGRAS PARA TELAS PEQUENAS (até 630px de largura) */
+@media screen and (max-width: 630px) {
+/* Menu: centraliza os itens */
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Muda a seção principal para coluna (itens um embaixo do outro) */
+  section {
+    flex-direction: column;
+  }
+
+  /* Faz aside e main ocuparem 100% da largura */
+  aside, main {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* REGRAS PARA TELAS MUITO PEQUENAS (até 320px de largura) */
+@media screen and (max-width: 320px) {
+/* Menu em coluna (itens um embaixo do outro) */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Limita a largura das imagens para não estourarem a tela */
+  .picture{
+    width: 270px;
+  }
+}

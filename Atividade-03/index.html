@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" id="light">
+  <title>My WebSite - With a flexible layout</title>
+</head>
+
+<body>
+  <!-- Cabeçalho/topo da página -->
+  <header>
+    <h1>Xadrez</h1>  <!-- Título principal -->
+    <p>Melhor jogador da <strong>historia</strong> do xadrez</p>  <!-- Texto com palavra em destaque -->
+
+    <!-- Botão que muda entre tema claro e escuro -->
+    <button onclick="darkmode()">
+        Alterna tema
+    </button>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav>
+    <ul>  <!-- Lista não ordenada -->
+      <li><a href="#">Link 1</a></li>  <!-- Item 1 do menu -->
+      <li><a href="#">Link 2</a></li>  <!-- Item 2 do menu -->
+      <li><a href="#">Link 3</a></li>  <!-- Item 3 do menu -->
+      <li><a href="#">Link 4</a></li>  <!-- Item 4 do menu -->
+    </ul>
+  </nav>
+  
+  <!-- Seção principal (divide em colunas) -->
+  <section>
+    <!-- Coluna lateral (conteúdo secundário) -->
+    <aside>
+      <!-- Bloco "Sobre ele" -->
+      <div class="about">
+        <p><strong>Sobre ele</strong></p>  <!-- Subtítulo em negrito -->
+        <p>Magnus Calsen:</p>
+        
+        <!-- Container para foto grande -->
+        <div class="picture big">
+          <figure>  <!-- Tag especial para imagens com legenda -->
+            <img src="https://images.chesscomfiles.com/uploads/v1/master_player/3b0ddf4e-bd82-11e8-9421-af517c2ebfed.f2dc9e34.250x250o.5ede81456fe8.png" alt="Foto de Magnus Carlsen">
+            <figcaption>Holandes com cara que ninguem ganha dele.</figcaption>  <!-- Legenda da foto -->
+          </figure>
+        </div>
+        
+        <p>Pode ser discutir sobre o melhor jogador da historia, mas para muito o Magnus Calsen é o melhor jogador da historia.</p>
+      </div>
+
+      <!-- Bloco "Campeonatos que ganhou" -->
+      <div class="more">
+        <p><strong>Campeonatos que ganhou</strong></p>
+        <p>Aqui a baixo esta alguns dos campeonatos que magnus ganhou, sendo cada um deles são algo que muitos jogadores buscam por ano.</p>
+        
+        <!-- Container para foto 1 -->
+        <div class="picture">
+            <figure>
+                <img src="https://c8.alamy.com/comp/DJ92WY/chennai-india-25th-nov-2013-magnus-carlsen-r-of-norway-receives-the-DJ92WY.jpg" alt="Magnus recebendo troféu">
+                <figcaption>Holandes ganhando seu primero campeona mundial</figcaption>
+            </figure>
+        </div>
+        
+        <!-- Container para foto 2 -->
+        <div class="picture">
+            <figure>
+                <img src="https://images.chesscomfiles.com/uploads/v1/news/1274649.02ee5022.668x375o.cd10cc2c7bb7@2x.png" alt="Magnus em torneio">
+                <figcaption>Holandes ganhando seu Campeonato Fide</figcaption>
+            </figure>
+        </div>
+        
+        <!-- Container para foto 3 -->
+        <div class="picture">
+            <figure>
+                <img src="https://mms.businesswire.com/media/20230601005497/en/1808193/5/52924837582_80828e2739_o.jpg" alt="Magnus com outro troféu">
+                <figcaption>Holandes ganhando SuperBat campeonato</figcaption>
+            </figure>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Coluna principal (conteúdo mais importante) -->
+    <main>
+      <p><b>Ultimo Campeonato</b></p>  <!-- Título em negrito -->
+      <p>Title description, Dec 7, 2024</p>  <!-- Data da notícia -->
+      
+      <!-- Foto grande do conteúdo principal -->
+      <div class="picture big">
+        <figure>
+            <img src="https://images.chesscomfiles.com/uploads/event_index/d5623c84-bc46-11ee-88fd-d78208d02c4e-1.89280935.png" alt="Último campeonato">
+            <figcaption>Holandes ganhando seu primero campeona mundial</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Parágrafos do artigo -->
+      <p>Hoje em dia o que se apresenta e que ele não está tão focado. Talvez um dos motivos e que se tornou pai e esta buscando uma aposentadoria calma.</p>
+      <p>Mas ainda e notavel a sua suprecia no xadrez, parece que ele ainda esta anos a frente de qualquer jogador da atualidade.</p>
+      <p>E inevitalvel a aposentadoria dele em algum momento, a pergunta que fica é: Sera que vamos ter outro jogador tão dominante futuramente?</p>
+    </main>
+  </section>
+
+  <!-- Rodapé da página -->
+  <footer>
+    <p>Essa é uma diferença entre uma fã de uma fanboy.</p>
+  </footer>
+
+  <!-- Código JavaScript que faz o botão de tema funcionar -->
+  <script>
+    let index = 0  // Variável que controla qual tema está ativo
+    
+    function darkmode (){
+        // Pega o link do arquivo de estilo
+        let link = document.getElementById("light");
+        
+        // Lista dos arquivos de tema (claro e escuro)
+        let arquivos = ["style.css", "dark.css"];
+
+        // Avança para o próximo tema
+        index += 1;
+
+        // Se passou do último tema, volta para o primeiro
+        if(index >= 2){
+            index= 0;
+        }
+
+        // Troca o arquivo de estilo
+        link.href = arquivos[index];
+    }
+  </script>
+</body>
+</html>
